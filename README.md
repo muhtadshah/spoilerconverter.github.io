@@ -1,0 +1,1 @@
+# spoilerconverter.github.io
