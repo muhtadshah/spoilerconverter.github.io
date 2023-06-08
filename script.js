@@ -13,10 +13,8 @@ function convertToSpoilers() {
 // Function to copy the output text to the clipboard
 function copyOutputText() {
   const outputText = document.getElementById("outputText").textContent;
-
-  // Use the Clipboard API to write the text to the clipboard
   navigator.clipboard.writeText(outputText).then(() => {
-    alert("Copied to clipboard!");
+    showCopySuccessPopup(); // Show the success popup
   });
 }
 
@@ -41,6 +39,17 @@ function checkForSpoilers() {
   } else {
     convertToSpoilers();
   }
+}
+
+function showCopySuccessPopup() {
+  const copySuccessPopup = document.getElementById("copySuccessPopup");
+  copySuccessPopup.classList.add("show");
+  setTimeout(hideCopySuccessPopup, 2000); // Hide the popup after 2 seconds
+}
+
+function hideCopySuccessPopup() {
+  const copySuccessPopup = document.getElementById("copySuccessPopup");
+  copySuccessPopup.classList.remove("show");
 }
 
 // Event listener for input changes
