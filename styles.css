@@ -157,6 +157,47 @@ pre {
   color: #555;
 }
 
+.copy-success-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFF;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+}
+
+.copy-success-popup.show {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.copy-success-popup-content {
+  text-align: center;
+}
+
+.copy-success-icon {
+  width: 40px;
+  height: 40px;
+  fill: #7289DA;
+  margin-bottom: 10px;
+}
+
+.copy-success-message {
+  color: #555;
+  font-size: 16px;
+}
+
 @media screen and (max-width: 500px) {
   .container {
     padding: 10px;
